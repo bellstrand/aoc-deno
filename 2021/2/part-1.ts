@@ -1,5 +1,6 @@
 export const file = await Deno.readTextFile("./2021/2/input");
 const input = file
+  .replace(/\n+$/, "")
   .split("\n")
   .map((d) => d.split(" "))
   .map((d) => [d[0], parseInt(d[1])]) as [[string, number]];

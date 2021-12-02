@@ -1,5 +1,8 @@
 export const file = await Deno.readTextFile("./2021/1/input");
-const input = file.split("\n").map((d) => parseInt(d));
+const input = file
+  .replace(/\n+$/, "")
+  .split("\n")
+  .map((d) => parseInt(d));
 
 let total = 0;
 input.forEach((depth, index) => {
